@@ -285,7 +285,40 @@
             font-size: 1rem;
             color: #555;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll(".nav__link");
+
+            function changeActiveLink() {
+                let scrollY = window.scrollY;
+
+                sections.forEach((section) => {
+                    const sectionHeight = section.offsetHeight;
+                    const sectionTop = section.offsetTop - 50; // Ajuste para precisão
+                    const sectionId = section.getAttribute("id");
+
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        navLinks.forEach((link) => {
+                            link.classList.remove("active-link");
+                        });
+
+                        document
+                            .querySelector(`.nav__link[href="#${sectionId}"]`)
+                            .classList.add("active-link");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", changeActiveLink);
+        });
+
+    </script>
     <header class="header" id="header">
         <nav class="nav container">
             <img src="assets/img/logo.png" alt="logo">
@@ -298,16 +331,13 @@
                         <a href="#about" class="nav__link">Sobre</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#services" class="nav__link">Porque a Via Brasil?</a>
+                        <a href="#experience" class="nav__link">Porque a Via Brasil?</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#contact" class="nav__link">Vantagens</a>
+                        <a href="#advantages" class="nav__link">Vantagens</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#contact" class="nav__link">Contato</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">login</a>
+                        <a href="#contact" class="nav__link">Nossos números</a>
                     </li>
                 </ul>
                 <i class="ri-close-line nav__close" id="nav-close"></i>
@@ -321,14 +351,13 @@
     <main class="main">
         <!--==================== HOME ====================-->
         <section class="home" id="home">
-            <img style="border-radius: 10px;"
-                src="https://cdn.pixabay.com/photo/2022/03/23/21/27/road-7087957_1280.jpg"
+            <img style="border-radius: 10px;" src="https://cdn.pixabay.com/photo/2022/03/23/21/27/road-7087957_1280.jpg"
                 alt="" class="home__img">
             <div class="home__container container grid">
                 <div class="home__data">
                     <span class="home__data-subtitle">Gestão Eficiente de Pedágios</span>
                     <h1 class="home__data-title">Soluções para <br> auditoria e <b>controle <br> de faturas</b></h1>
-                    <a href="#" class="button">Saiba mais</a>
+                    <a href="#experience" class="button">Saiba mais</a>
                 </div>
 
             </div>
@@ -363,12 +392,12 @@
         </section>
 
 
-       
+
         <!--==================== POR QUE A VIA BRASIL ====================-->
         <br>
         <br>
         <br>
-        <section class="experience section">
+        <section class="experience section" id="experience">
             <h2 class="section__title">Por que a Via Brasil?</h2>
 
             <div class="experience__container container">
@@ -484,12 +513,12 @@
 
 
         <!--==================== VANTAGENS ====================-->
-<br>
-<br>
-<br>
-<br>
-<br>
-        <section class="advantages section">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <section class="advantages section" id="advantages">
             <h2 class="section__title">Vantagens</h2>
 
             <div class="advantages__container container">
@@ -556,13 +585,9 @@
 
 
 
-    <section class="contact section">
+    <section class="contact section" id="contact">
         <h2 class="section__title">Nossos Números</h2>
         <div class="stats__container container">
-            <div class="stat">
-                <h3 class="stat__number" data-target="1500">0</h3>
-                <p class="stat__label">Empresas Contratadas</p>
-            </div>
             <div class="stat">
                 <h3 class="stat__number" data-target="2500">0</h3>
                 <p class="stat__label">Clientes Satisfeitos</p>
@@ -573,11 +598,8 @@
             </div>
         </div>
     </section>
-    
-    <a href="https://wa.me/SEUNUMERO" class="whatsapp-float" target="_blank">
-        <i class="ri-whatsapp-line"></i>
-    </a>
-    
+
+
     <style>
         .stats__container {
             display: flex;
@@ -589,16 +611,19 @@
             background: #fff;
             flex-wrap: wrap;
         }
+
         .stat {
             font-size: 1.5rem;
             font-weight: bold;
             flex: 1 1 200px;
             max-width: 300px;
         }
+
         .stat__number {
             font-size: 2.5rem;
             color: #c03b3b;
         }
+
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
@@ -611,33 +636,35 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             transition: 0.3s;
         }
+
         .whatsapp-float:hover {
             background: #1ebf57;
         }
-    
+
         @media (max-width: 768px) {
             .stats__container {
                 flex-direction: column;
                 gap: 30px;
             }
+
             .stat {
                 max-width: 100%;
             }
         }
     </style>
-    
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const counters = document.querySelectorAll(".stat__number");
             const speed = 200;
-    
+
             const startCount = () => {
                 counters.forEach(counter => {
                     const updateCount = () => {
                         const target = +counter.getAttribute("data-target");
                         const count = +counter.innerText;
                         const increment = target / speed;
-    
+
                         if (count < target) {
                             counter.innerText = Math.ceil(count + increment);
                             setTimeout(updateCount, 20);
@@ -648,13 +675,13 @@
                     updateCount();
                 });
             };
-    
+
             let started = false;
             window.addEventListener("scroll", () => {
                 const section = document.querySelector(".stats__container");
                 const sectionTop = section.offsetTop;
                 const windowHeight = window.innerHeight;
-    
+
                 if (!started && window.scrollY + windowHeight > sectionTop) {
                     startCount();
                     started = true;
@@ -662,6 +689,8 @@
             });
         });
     </script>
+
+
 
 
 
@@ -688,41 +717,33 @@
                         </a>
                     </div>
                 </div>
-    
+
                 <div class="footer__data">
                     <h3 class="footer__subtitle">Sobre</h3>
                     <ul>
-                        <li class="footer__item"><a href="#" class="footer__link">Sobre Nós</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Recursos</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Novidades & Blog</a></li>
+                        <li class="footer__item"><a href="#about" class="footer__link">Sobre Nós</a></li>
+
                     </ul>
                 </div>
-    
+
                 <div class="footer__data">
-                    <h3 class="footer__subtitle">Empresa</h3>
+                    <h3 class="footer__subtitle">E-mail</h3>
                     <ul>
-                        <li class="footer__item"><a href="#" class="footer__link">Equipe</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Planos e Preços</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Seja um Membro</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">contato@gestaoviabrasil.com.br</a>
+                        </li>
                     </ul>
                 </div>
-    
+
                 <div class="footer__data">
-                    <h3 class="footer__subtitle">Suporte</h3>
+                    <h3 class="footer__subtitle">Telefone</h3>
                     <ul>
-                        <li class="footer__item"><a href="#" class="footer__link">FAQs</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Central de Suporte</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Fale Conosco</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">(47)3058-1188</a></li>
                     </ul>
                 </div>
             </div>
-    
+
             <div class="footer__rights">
-                <p class="footer__copy">&#169; 2024 Nome da Empresa. Todos os direitos reservados.</p>
-                <div class="footer__terms">
-                    <a href="#" class="footer__terms-link">Termos & Condições</a>
-                    <a href="#" class="footer__terms-link">Política de Privacidade</a>
-                </div>
+                <p class="footer__copy">&#169; 2025 Emanuel Tonis Florz Filho. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
