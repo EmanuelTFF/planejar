@@ -14,8 +14,8 @@
   --first-color-second: hsl(120, 60%, 45%); /* Verde mais vibrante */
   --first-color-alt: hsl(120, 60%, 20%); /* Verde escuro */
   --title-color: hsl(120, 50%, 25%); /* Verde mais fechado */
-  --text-color: hsl(126, 24%, 33%); /* Marrom Terra */
-  --text-color-light: hsl(122, 13%, 45%); /* Marrom claro */
+  --text-color: hsl(127, 32%, 90%); /* Marrom Terra */
+  --text-color-light: hsl(120, 100%, 98%); /* Marrom claro */
   --input-color: hsl(40, 80%, 90%); /* Bege suave */
   --body-color: hsla(120, 21%, 64%, 0.446); /* Fundo bege claro */
   --white-color: #FFF;
@@ -243,14 +243,15 @@ input {
 }
 
 .nav__link {
-  color: var(--text-color-light);
   font-weight: var(--font-semi-bold);
   text-transform: uppercase;
+  color: var(--white-color); /* Definir cor branca fixa */
 }
 
 .nav__link:hover {
-  color: var(--text-color);
+  color: var(--white-color); /* Garante que a cor não mude ao passar o mouse */
 }
+
 
 .nav__close {
   position: absolute;

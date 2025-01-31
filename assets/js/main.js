@@ -31,12 +31,30 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/
+/*==================== CHANGE BACKGROUND HEADER ====================*/
 function scrollHeader(){
     const header = document.getElementById('header')
-    // When the scroll is greater than 100 viewport height, add the scroll-header class to the header tag
-    if(this.scrollY >= 100) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
+    const navLinks = document.querySelectorAll('.nav__link'); // Seleciona todos os links
+
+    // Quando o scroll é maior que 100px, adiciona a classe 'scroll-header' no cabeçalho
+    if(this.scrollY >= 100) {
+        header.classList.add('scroll-header'); 
+        
+        // Garante que os links continuem brancos quando o fundo mudar
+        navLinks.forEach(link => {
+            link.style.color = 'white';  // Força a cor branca
+        });
+    } else {
+        header.classList.remove('scroll-header'); 
+        
+        // Restabelece a cor original dos links (ou qualquer cor que você tenha definido)
+        navLinks.forEach(link => {
+            link.style.color = '';  // Retira a alteração de cor, fazendo-os seguir o estilo padrão
+        });
+    }
 }
 window.addEventListener('scroll', scrollHeader)
+
 
 /*==================== SWIPER DISCOVER ====================*/
 let swiper = new Swiper(".discover__container", {
