@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/logo1.png" type="image/png">
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/body.css">
+    <title>Planejar Planejamento Agropecuário</title>
+</head>
+
+<body>
+    <style>
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll(".nav__link");
+
+            function changeActiveLink() {
+                let scrollY = window.scrollY;
+
+                sections.forEach((section) => {
+                    const sectionHeight = section.offsetHeight;
+                    const sectionTop = section.offsetTop - 50; // Ajuste para precisão
+                    const sectionId = section.getAttribute("id");
+
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        navLinks.forEach((link) => {
+                            link.classList.remove("active-link");
+                        });
+
+                        document
+                            .querySelector(`.nav__link[href="#${sectionId}"]`)
+                            .classList.add("active-link");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", changeActiveLink);
+        });
+
+    </script>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <img style="width: 170px;" src="assets/img/logo1.png" alt="logo">
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Início</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">Sobre</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#experience" class="nav__link">Porque a Planejar?</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#advantages" class="nav__link">Vantagens</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#testimonials" class="nav__link">Depoimentos</a>
+                    </li>
+                </ul>
+                <i class="ri-close-line nav__close" id="nav-close"></i>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-function-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home" id="home">
+            <img style="border-radius: 10px;"
+                src="https://terramagna.com.br/wp-content/uploads/2022/11/Plantio-de-soja-amadurecimento-verde.jpg"
+                alt="" class="home__img">
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <h1 class="home__data-title">
+                        No agro, <img src="assets/img/letra.png" alt="" class="home__letter"> é <b> lucrar!</b>
+                        <br>
+
+                    </h1>
+                    <a href="#experience" class="button">Saiba mais</a>
+                </div>
+            </div>
+        </section>
+        <style>
+            .home__data-title {
+                font-size: clamp(2rem, 4vw, 4rem);
+                /* Ajusta o tamanho do texto dinamicamente */
+                font-weight: bold;
+                line-height: 1.2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                text-align: center;
+                gap: 20px;
+                /* Espaço entre os elementos */
+            }
+
+            .home__letter {
+                display: inline-block;
+                height: clamp(50px, 8vw, 90px);
+                /* Ajusta dinamicamente */
+                vertical-align: middle;
+            }
+
+            .button {
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .home__data {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .button {
+                margin-top: 20px;
+                /* Espaço entre o título e o botão */
+            }
+        </style>
+
+
+        <!--==================== SOBRE ====================-->
+        <br>
+        <br>
+        <br>
+        <section class="about section" id="about">
+            <div class="about__container container grid">
+                <div class="about__data">
+                    <h2 class="section__title about__title">Mais Informações <br> Sobre Planejamento Agropecuário</h2>
+                    <p class="about__description">
+                        O planejamento agropecuário é essencial para otimizar a produção rural, garantindo
+                        sustentabilidade,
+                        eficiência e rentabilidade. Com estratégias adequadas, é possível maximizar os recursos
+                        disponíveis,
+                        reduzir custos e melhorar a produtividade no campo.
+                    </p>
+                    <a href="#" class="button">Saiba Mais</a>
+                </div>
+                <div class="about__img">
+                    <div class="about__img-overlay">
+                        <img style="border-radius: 10px; width: 500px;" src="assets/img/sobre.png"
+                            alt="Planejamento agropecuário" class="about__img-one">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <style>
+            .about__description {
+                text-align: justify;
+            }
+        </style>
+
+
+
+
+        <!--==================== POR QUE A VIA BRASIL ====================-->
+        <br>
+        <br>
+        <br>
+        <section class="experience section" id="experience">
+            <h2 class="section__title">Por que a Planejar?</h2>
+
+            <div class="experience__container container">
+                <div class="experience__row">
+                    <div class="experience__text">
+                        <h2 class="experience__number">Gestão eficiente da propriedade rural</h2>
+                        <span class="experience__description">
+                            Soluções completas para otimização da produção agrícola e pecuária.
+                            <ul>
+                                <li>Monitoramento de custos e insumos</li>
+                                <li>Controle de produtividade e eficiência</li>
+                                <li>Redução de desperdícios e perdas</li>
+                                <li>Outras funcionalidades</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <div class="experience__image">
+                        <img src="https://blog.7mboots.com.br/wp-content/uploads/2025/01/blog-5482.jpg"
+                            alt="Gestão Rural">
+                    </div>
+                </div>
+
+                <div class="experience__row experience__row--reverse">
+                    <div class="experience__text">
+                        <h2 class="experience__number">Análise e auditoria agrícola</h2>
+                        <span class="experience__description">
+                            Auditoria de dados agrícolas para maior transparência e controle.
+                            <ul>
+                                <li>Identificação de falhas no manejo</li>
+                                <li>Controle de despesas e receitas</li>
+                                <li>Comparação de safras e desempenho</li>
+                                <li>Outros benefícios</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <div class="experience__image">
+                        <img src="https://blbauditoreseconsultores.com.br/blog/wp-content/uploads/2022/03/auditoria-para-distribuicao-insumos-agricolas.png"
+                            alt="Auditoria Agrícola">
+                    </div>
+                </div>
+
+                <div class="experience__row">
+                    <div class="experience__text">
+                        <h2 class="experience__number">Gerenciamento de insumos e recursos</h2>
+                        <span class="experience__description">
+                            Controle detalhado de insumos utilizados na produção agropecuária.
+                            <ul>
+                                <li>Acompanhamento de estoque</li>
+                                <li>Registro de aplicações e consumo</li>
+                                <li>Gestão de fornecedores</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <div class="experience__image">
+                        <img src="https://forbes.com.br/wp-content/uploads/2021/10/Insumos-agricolas-lavoura-scaled.jpg"
+                            alt="Controle de Insumos">
+                    </div>
+                </div>
+
+                <div class="experience__row experience__row--reverse">
+                    <div class="experience__text">
+                        <h2 class="experience__number">Relatórios de desempenho agrícola</h2>
+                        <span class="experience__description">
+                            Visualização detalhada dos resultados da produção.
+                            <ul>
+                                <li>Relatórios por cultura</li>
+                                <li>Análises climáticas e impactos</li>
+                                <li>Projeções de colheita</li>
+                                <li>Outros insights</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <div class="experience__image">
+                        <img src="https://i2.wp.com/www.myfarm.com.br/wp-content/uploads/2023/12/980174.jpg"
+                            alt="Relatórios Agrícolas">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const rows = document.querySelectorAll(".experience__row");
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add("visible");
+                            }
+                        });
+                    },
+                    { threshold: 0.2 }
+                );
+                rows.forEach((row) => observer.observe(row));
+            });
+        </script>
+
+        <!--==================== VANTAGENS ====================-->
+        <section class="advantages section" id="advantages">
+            <h2 class="section__title">Vantagens</h2>
+            <div class="advantages__container container">
+                <div class="advantage" data-sr>
+                    <i class="ri-file-list-3-line advantage__icon"></i>
+                    <h3 class="advantage__title">Otimização de Custos</h3>
+                    <p class="advantage__description">Gestão eficiente dos custos operacionais da fazenda.</p>
+                </div>
+                <div class="advantage" data-sr>
+                    <i class="ri-time-line advantage__icon"></i>
+                    <h3 class="advantage__title">Monitoramento em Tempo Real</h3>
+                    <p class="advantage__description">Acompanhamento contínuo do desempenho da produção.</p>
+                </div>
+                <div class="advantage" data-sr>
+                    <i class="ri-archive-line advantage__icon"></i>
+                    <h3 class="advantage__title">Gestão de Estoque</h3>
+                    <p class="advantage__description">Controle de insumos agrícolas e pecuários.</p>
+                </div>
+                <div class="advantage" data-sr>
+                    <i class="ri-bar-chart-line advantage__icon"></i>
+                    <h3 class="advantage__title">Análises e Projeções</h3>
+                    <p class="advantage__description">Projeção de colheita e produtividade.</p>
+                </div>
+            </div>
+        </section>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            ScrollReveal().reveal('[data-sr]', {
+                distance: '50px',
+                origin: 'bottom',
+                duration: 800,
+                delay: 200,
+                easing: 'ease-in-out',
+                interval: 200,
+                reset: false
+            });
+        </script>
+
+
+        <section class="testimonials section" id="testimonials">
+            <h2 class="section__title">Depoimentos</h2>
+            <div class="testimonials__container container">
+                <div class="testimonial">
+                    <video controls class="testimonial__video">
+                        <source src="video1.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos.
+                    </video>
+                    <p class="testimonial__text">"A Planejar transformou nossa propriedade! O planejamento foi
+                        impecável."</p>
+                    <span class="testimonial__author">- João Silva</span>
+                </div>
+                <div class="testimonial">
+                    <video controls class="testimonial__video">
+                        <source src="video2.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos.
+                    </video>
+                    <p class="testimonial__text">"Serviço de altíssima qualidade. Recomendo para todos no setor agro."
+                    </p>
+                    <span class="testimonial__author">- João Silva</span>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial__text">"A expertise da equipe nos ajudou a crescer de forma sustentável e
+                        eficiente!"</p>
+                    <span class="testimonial__author">- João Silva</span>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial__text">"Uma parceria essencial para o sucesso do nosso agronegócio."</p>
+                    <span class="testimonial__author">- João Silva</span>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .testimonials {
+                text-align: center;
+                padding: 4rem 2rem;
+                background-color: rgba(173, 191, 172, 0.459);
+                border-radius: 20px;
+            }
+
+            .testimonials__container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 30px;
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 2rem;
+                background: #ffffff;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+            }
+
+            .testimonial {
+                background: #f9f9f9;
+                padding: 1.5rem;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .testimonial__video {
+                width: 100%;
+                border-radius: 10px;
+                margin-bottom: 1rem;
+            }
+
+            .testimonial__text {
+                font-size: 1.2rem;
+                color: #333;
+                margin-bottom: 0.5rem;
+            }
+
+            .testimonial__author {
+                font-size: 1rem;
+                color: #666;
+                font-weight: bold;
+            }
+
+            @media (max-width: 768px) {
+                .testimonials__container {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+
+
+
+
+
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <div class="footer__content grid">
+                    <div class="footer__data">
+                        <h3 class="footer__title">Empresa</h3>
+                        <p class="footer__description">Escolha o destino, nós proporcionamos a experiência.</p>
+                        <div>
+                            <a href="https://www.instagram.com/" target="_blank" class="footer__social">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">Sobre</h3>
+                        <ul>
+                            <li class="footer__item"><a href="#about" class="footer__link">Sobre Nós</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">E-mail</h3>
+                        <ul>
+                            <li class="footer__item"><a href="#" class="footer__link">planejar@agropecuraio.com.br</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">Telefone</h3>
+                        <ul>
+                            <li class="footer__item"><a href="#" class="footer__link">(42) 9888-13269</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer__rights">
+                    <p class="footer__copy">&#169; 2025 Emanuel Tonis Florz Filho. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-line scrollup__icon"></i>
+        </a>
+
+        <!--=============== SCROLL REVEAL===============-->
+        <script src="assets/js/scrollreveal.min.js"></script>
+
+        <!--=============== SWIPER JS ===============-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+</body>
+
+</html>

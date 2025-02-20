@@ -1,0 +1,280 @@
+   /* Cor vermelha para os detalhes */
+
+        /* Cor vermelha para os botões */
+        button,
+        .button {
+            background-color: rgb(63, 101, 61);
+            color: white;
+            border: 1px solid rgb(61, 93, 60);
+            border-radius: 10px;
+        }
+
+        button:hover,
+        .button:hover {
+            background-color: rgb(52, 81, 50);
+        }
+
+        :root {
+            --main-color: rgb(63, 101, 61);
+            --text-color: #333;
+            --bg-light: #f9f9f9;
+            --font-size: 1rem;
+            --border-radius: 10px;
+        }
+
+
+        .experience__container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .experience__row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .experience__row--reverse {
+            flex-direction: row-reverse;
+        }
+
+        .experience__text {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience__image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .experience__image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .experience__container {
+                padding: 20px;
+                /* Adiciona um pouco de espaçamento interno */
+            }
+
+            .experience__row {
+                flex-direction: column;
+                gap: 20px;
+                /* Menos espaçamento entre os itens */
+                text-align: center;
+                /* Centraliza os textos */
+            }
+
+            .experience__image img {
+                max-width: 100%;
+                /* Garante que a imagem ocupe toda a largura disponível */
+                height: auto;
+                /* Ajusta a altura da imagem proporcionalmente */
+            }
+
+            .experience__text {
+                padding: 15px;
+                /* Reduz o padding para melhor aproveitamento do espaço */
+            }
+
+            .experience__number {
+                font-size: 1.5rem;
+                /* Ajusta o tamanho do título para mobile */
+            }
+
+            .experience__description {
+                font-size: 1rem;
+                /* Ajusta o tamanho do texto da descrição */
+            }
+
+            .experience__description ul li {
+                font-size: 0.9rem;
+                /* Ajusta o tamanho da lista */
+            }
+        }
+
+
+        .experience__description ul {
+            list-style-type: none;
+            /* Remove os pontos padrões */
+            padding-left: 0;
+        }
+
+        .experience__description ul li {
+            position: relative;
+            /* Para poder posicionar o check */
+            padding-left: 25px;
+            /* Espaço para o check */
+            margin-bottom: 10px;
+            /* Espaço entre os itens */
+        }
+
+        .experience__description ul li::before {
+            content: '✔';
+            /* Carrega o check */
+            position: absolute;
+            left: 0;
+            /* Posiciona o check à esquerda */
+            color: rgb(80, 128, 78);
+            /* Cor do check */
+            font-size: 18px;
+            /* Tamanho do check */
+            top: 50%;
+            /* Centraliza verticalmente */
+            transform: translateY(-50%);
+        }
+
+
+        .services {
+            padding: 50px 10px;
+            background-color: var(--bg-light);
+        }
+
+        .section__title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section__title::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--main-color);
+            margin: 10px auto;
+        }
+
+        .services__container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .services__card {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .services__card:hover {
+            transform: translateY(-5px);
+        }
+
+        .services__img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+        }
+
+        .services__title {
+            font-size: 1.5rem;
+            color: var(--main-color);
+            margin-bottom: 10px;
+        }
+
+        .services__description {
+            color: var(--text-color);
+            font-size: var(--font-size);
+        }
+
+        @media (max-width: 768px) {
+            .services__container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .experience__row {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .experience__row.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .advantages {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .section__title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section__title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: rgb(107, 159, 105);
+            margin: 10px auto;
+        }
+
+        .advantages__container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .advantage {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .advantage:hover {
+            transform: translateY(-5px);
+        }
+
+        .advantage__icon {
+            font-size: 2rem;
+            color: rgb(48, 92, 46);
+            margin-bottom: 10px;
+        }
+
+        .advantage__title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .advantage__description {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .nav__link {
+            color: white;
+            font-weight: var(--font-semi-bold);
+            text-transform: uppercase;
+        }
