@@ -53,6 +53,7 @@
     </script>
     <header class="header" id="header">
         <nav class="nav container">
+
             <img style="width: 170px;" src="assets/img/logo1.png" alt="logo">
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -154,7 +155,7 @@
                         disponíveis,
                         reduzir custos e melhorar a produtividade no campo.
                     </p>
-                    <a href="#" class="button">Saiba Mais</a>
+                    <a href="#experience" class="button">Saiba Mais</a>
                 </div>
                 <div class="about__img">
                     <div class="about__img-overlay">
@@ -399,6 +400,70 @@
                 }
             }
         </style>
+
+        <!-- Botão do WhatsApp -->
+        <!-- Botão do WhatsApp -->
+        <a href="https://wa.me/seunumerodetelefone" class="whatsapp-button" target="_blank"
+            aria-label="Fale conosco no WhatsApp">
+           <img src="https://img.freepik.com/vetores-premium/whatsapp-em-ingles_798572-489.jpg?semt=ais_hybrid" alt="">
+        </a>
+
+        <style>
+            .whatsapp-button {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+                background-color: #25d366;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                transition: transform 0.3s ease-in-out;
+                animation: pulse 1.5s infinite;
+                text-decoration: none;
+            }
+
+            .whatsapp-icon {
+                width: 35px;
+                height: 35px;
+            }
+
+            .whatsapp-button:hover {
+                transform: scale(1.1);
+            }
+
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+
+                50% {
+                    transform: scale(1.15);
+                }
+
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .whatsapp-button {
+                    width: 50px;
+                    height: 50px;
+                    bottom: 15px;
+                    right: 15px;
+                }
+
+                .whatsapp-icon {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        </style>
+
 
 
 
