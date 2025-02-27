@@ -53,15 +53,14 @@
     </script>
     <header class="header" id="header">
         <nav class="nav container">
+            <div class="nav__logo left">
+                <img src="assets/img/logo1.png" alt="logo">
+            </div>
 
-            <img style="width: 170px;" src="assets/img/logo1.png" alt="logo">
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item">
                         <a href="#home" class="nav__link active-link">Início</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#about" class="nav__link">Sobre</a>
                     </li>
                     <li class="nav__item">
                         <a href="#experience" class="nav__link">Porque a Planejar?</a>
@@ -72,31 +71,308 @@
                     <li class="nav__item">
                         <a href="#testimonials" class="nav__link">Depoimentos</a>
                     </li>
+                    <li class="nav__item">
+                        <a href="#team" class="nav__link">Equipe</a>
+                    </li>
                 </ul>
                 <i class="ri-close-line nav__close" id="nav-close"></i>
             </div>
+
+            <div class="nav__logo right">
+                <img src="assets/img/logo.png" alt="logo">
+            </div>
+
             <div class="nav__toggle" id="nav-toggle">
                 <i class="ri-function-line"></i>
             </div>
         </nav>
     </header>
 
+    <style>
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0 20px;
+            /* Adiciona espaço lateral */
+        }
+
+        .nav__menu {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            /* Centraliza os links */
+        }
+
+        .nav__list {
+            display: flex;
+            gap: 30px;
+            /* Mantém espaçamento entre os links */
+            list-style: none;
+        }
+
+        .nav__link {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .nav__logo img {
+            width: 180px;
+            /* Reduzi o tamanho para harmonizar */
+        }
+
+        .nav__logo.left {
+            position: absolute;
+            left: 50px;
+            /* Diminui um pouco a proximidade da borda */
+            padding-left: 60px;
+            /* Adiciona um pequeno afastamento interno */
+        }
+
+        .nav__logo.right {
+            position: absolute;
+            right: 50px;
+            /* Diminui um pouco a proximidade da borda */
+            padding-right: 60px;
+            /* Adiciona um pequeno afastamento interno */
+        }
+
+        @media screen and (max-width: 767px) {
+            .nav__logo img {
+                width: 100px;
+                /* Reduz bastante o tamanho das imagens */
+            }
+
+            .nav__logo.left {
+                left: 20px;
+                padding-left: 0;
+            }
+
+            .nav__logo.right {
+                right: 20px;
+                padding-right: 0;
+            }
+
+            .nav__toggle {
+                font-size: 2rem;
+                /* Pode aumentar um pouco o tamanho do ícone */
+            }
+
+            .nav__toggle {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 1.8rem;
+                cursor: pointer;
+                z-index: 100;
+            }
+
+            .nav__close {
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+                font-size: 2rem;
+                color: var(--title-color);
+                cursor: pointer;
+                z-index: 10000;
+                /* Maior que o menu */
+            }
+
+        }
+
+        @media screen and (max-width: 1220px) {
+            .nav__link {
+                font-size: 0.9rem;
+
+            }
+
+            .nav__logo.left {
+                position: absolute;
+                left: 50px;
+                /* Diminui um pouco a proximidade da borda */
+                padding-left: 60px;
+                /* Adiciona um pequeno afastamento interno */
+            }
+
+            .nav__logo.right {
+                position: absolute;
+                right: 50px;
+                /* Diminui um pouco a proximidade da borda */
+                padding-right: 60px;
+                /* Adiciona um pequeno afastamento interno */
+            }
+        }
+
+        @media screen and (max-width: 1220px) {
+            .nav__link {
+                font-size: 0.9rem;
+            }
+
+            .nav__logo.left {
+                position: absolute;
+                left: 50px;
+                /* Diminui um pouco a proximidade da borda */
+                padding-left: 60px;
+                /* Adiciona um pequeno afastamento interno */
+            }
+
+            .nav__logo.right {
+                position: absolute;
+                right: 50px;
+                /* Diminui um pouco a proximidade da borda */
+                padding-right: 60px;
+                /* Adiciona um pequeno afastamento interno */
+            }
+
+            .nav__logo img {
+                width: 160px;
+                /* Reduzi o tamanho para harmonizar */
+            }
+        }
+
+        @media screen and (max-width: 1175px) {
+            .nav__link {
+                font-size: 0.85rem;
+            }
+
+            .nav__logo.left {
+                position: absolute;
+                left: 50px;
+                /* Diminui um pouco a proximidade da borda */
+                padding-left: 60px;
+                /* Adiciona um pequeno afastamento interno */
+            }
+
+            .nav__logo.right {
+                position: absolute;
+                right: 50px;
+                /* Diminui um pouco a proximidade da borda */
+                padding-right: 60px;
+                /* Adiciona um pequeno afastamento interno */
+            }
+
+            .nav__logo img {
+                width: 140px;
+                /* Reduzi o tamanho para harmonizar */
+            }
+        }
+
+        @media screen and (max-width: 1050px) {
+            .nav__link {
+                font-size: 0.8rem;
+            }
+
+            .nav__logo.left {
+                position: absolute;
+                left: 30px;
+                /* Diminui um pouco a proximidade da borda */
+                padding-left: 60px;
+                /* Adiciona um pequeno afastamento interno */
+            }
+
+            .nav__logo.right {
+                position: absolute;
+                right: 30px;
+                /* Diminui um pouco a proximidade da borda */
+                padding-right: 60px;
+                /* Adiciona um pequeno afastamento interno */
+            }
+
+            .nav__logo img {
+                width: 120px;
+                /* Reduzi o tamanho para harmonizar */
+            }
+        }
+
+        @media screen and (max-width: 950px) {
+            .nav__link {
+                font-size: 0.75rem;
+            }
+
+            .nav__logo.left {
+                position: absolute;
+                left: 5px;
+                /* Diminui um pouco a proximidade da borda */
+                padding-left: 60px;
+                /* Adiciona um pequeno afastamento interno */
+            }
+
+            .nav__logo.right {
+                position: absolute;
+                right: 5px;
+                /* Diminui um pouco a proximidade da borda */
+                padding-right: 60px;
+                /* Adiciona um pequeno afastamento interno */
+            }
+
+            .nav__logo img {
+                width: 100px;
+                /* Reduzi o tamanho para harmonizar */
+            }
+        }
+
+        @media screen and (max-width: 874px) {
+            .nav__link {
+                font-size: 0.75rem;
+            }
+
+            .nav__logo.left {
+                position: absolute;
+                left: 0;
+                /* Diminui um pouco a proximidade da borda */
+                padding-left: 60px;
+                /* Adiciona um pequeno afastamento interno */
+            }
+
+            .nav__logo.right {
+                position: absolute;
+                right: 0;
+                /* Diminui um pouco a proximidade da borda */
+                padding-right: 60px;
+                /* Adiciona um pequeno afastamento interno */
+            }
+
+            .nav__logo img {
+                width: 100px;
+                /* Reduzi o tamanho para harmonizar */
+            }
+        }
+
+        /* Ícones na lateral */
+        /* Ícones na lateral, mais próximos do centro */
+    </style>
+
+
     <main class="main">
-        <!--==================== HOME ====================-->
+
         <section class="home" id="home">
-            <img style="border-radius: 10px;"
-                src="https://terramagna.com.br/wp-content/uploads/2022/11/Plantio-de-soja-amadurecimento-verde.jpg"
-                alt="" class="home__img">
+            <img style="border-radius: 10px;" src="assets/img/WhatsApp Image 2025-02-25 at 12.12.08.jpeg" alt=""
+                class="home__img">
+
+            <br>
             <div class="home__container container grid">
                 <div class="home__data">
                     <h1 class="home__data-title">
+
                         No agro, <img src="assets/img/letra.png" alt="" class="home__letter"> é <b> lucrar!</b>
                         <br>
 
                     </h1>
                     <a href="#experience" class="button">Saiba mais</a>
                 </div>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/planejar_planejamentoagrop/" target="_blank" class="social-icon">
+                        <i class="ri-instagram-fill"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100064026793225&locale=pt_BR" target="_blank" class="social-icon">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                </div>
+
             </div>
+
         </section>
         <style>
             .home__data-title {
@@ -109,14 +385,14 @@
                 justify-content: center;
                 flex-wrap: wrap;
                 text-align: center;
-                gap: 20px;
+                gap: 40px;
                 /* Espaço entre os elementos */
             }
 
             .home__letter {
                 display: inline-block;
-                height: clamp(50px, 8vw, 90px);
-                /* Ajusta dinamicamente */
+                height: clamp(70px, 10vw, 120px);
+                /* Aumentei os valores */
                 vertical-align: middle;
             }
 
@@ -136,6 +412,28 @@
             .button {
                 margin-top: 20px;
                 /* Espaço entre o título e o botão */
+            }
+
+            .social-icons {
+                display: flex;
+                gap: 15px;
+                /* Espaço entre os ícones */
+                margin-top: 15px;
+                justify-content: center;
+                /* Centraliza os ícones */
+            }
+
+            .social-icon {
+                font-size: 2rem;
+                /* Tamanho dos ícones */
+                color: rgb(255, 255, 255);
+                /* Cor dos ícones */
+                transition: 0.3s;
+            }
+
+            .social-icon:hover {
+                color: #2d8a5b;
+                /* Efeito hover (cor azul) */
             }
         </style>
 
@@ -175,9 +473,7 @@
 
 
         <!--==================== POR QUE A VIA BRASIL ====================-->
-        <br>
-        <br>
-        <br>
+
         <section class="experience section" id="experience">
             <h2 class="section__title">Por que a Planejar?</h2>
 
@@ -187,6 +483,7 @@
                         <h2 class="experience__number">Gestão eficiente da propriedade rural</h2>
                         <span class="experience__description">
                             Soluções completas para otimização da produção agrícola e pecuária.
+                            <br><br>
                             <ul>
                                 <li>Monitoramento de custos e insumos</li>
                                 <li>Controle de produtividade e eficiência</li>
@@ -206,6 +503,7 @@
                         <h2 class="experience__number">Análise e auditoria agrícola</h2>
                         <span class="experience__description">
                             Auditoria de dados agrícolas para maior transparência e controle.
+                            <br><br>
                             <ul>
                                 <li>Identificação de falhas no manejo</li>
                                 <li>Controle de despesas e receitas</li>
@@ -225,6 +523,7 @@
                         <h2 class="experience__number">Gerenciamento de insumos e recursos</h2>
                         <span class="experience__description">
                             Controle detalhado de insumos utilizados na produção agropecuária.
+                            <br><br>
                             <ul>
                                 <li>Acompanhamento de estoque</li>
                                 <li>Registro de aplicações e consumo</li>
@@ -233,7 +532,7 @@
                         </span>
                     </div>
                     <div class="experience__image">
-                        <img src="https://forbes.com.br/wp-content/uploads/2021/10/Insumos-agricolas-lavoura-scaled.jpg"
+                        <img src="https://boosteragro.com/blog-po/wp-content/uploads/2021/08/soja.jpg"
                             alt="Controle de Insumos">
                     </div>
                 </div>
@@ -243,6 +542,7 @@
                         <h2 class="experience__number">Relatórios de desempenho agrícola</h2>
                         <span class="experience__description">
                             Visualização detalhada dos resultados da produção.
+                            <br><br>
                             <ul>
                                 <li>Relatórios por cultura</li>
                                 <li>Análises climáticas e impactos</li>
@@ -287,13 +587,8 @@
                 </div>
                 <div class="advantage" data-sr>
                     <i class="ri-time-line advantage__icon"></i>
-                    <h3 class="advantage__title">Monitoramento em Tempo Real</h3>
+                    <h3 class="advantage__title">Assistência técnica via Whatsapp</h3>
                     <p class="advantage__description">Acompanhamento contínuo do desempenho da produção.</p>
-                </div>
-                <div class="advantage" data-sr>
-                    <i class="ri-archive-line advantage__icon"></i>
-                    <h3 class="advantage__title">Gestão de Estoque</h3>
-                    <p class="advantage__description">Controle de insumos agrícolas e pecuários.</p>
                 </div>
                 <div class="advantage" data-sr>
                     <i class="ri-bar-chart-line advantage__icon"></i>
@@ -401,11 +696,111 @@
             }
         </style>
 
-        <!-- Botão do WhatsApp -->
-        <!-- Botão do WhatsApp -->
+        <section class="team section" id="team">
+            <h2 class="section__title">Nossa Equipe</h2>
+            <div class="team__container container">
+                <div class="team__member">
+                    <img src="team1.jpg" alt="Foto de Ana Souza" class="team__photo">
+                    <h3 class="team__name">João Silva</h3>
+                    <p class="team__role">CEO & Fundadora</p>
+                    <p class="team__bio">Com mais de 15 anos de experiência, Ana lidera nossa equipe com visão e
+                        inovação.</p>
+                </div>
+                <div class="team__member">
+                    <img src="team2.jpg" alt="Foto de Carlos Lima" class="team__photo">
+                    <h3 class="team__name">João Silva</h3>
+                    <p class="team__role">Engenheiro Agrônomo</p>
+                    <p class="team__bio">Especialista em soluções sustentáveis, Carlos ajuda clientes a maximizar sua
+                        produção.</p>
+                </div>
+                <div class="team__member">
+                    <img src="team3.jpg" alt="Foto de Fernanda Costa" class="team__photo">
+                    <h3 class="team__name">João Silva</h3>
+                    <p class="team__role">Consultora Financeira</p>
+                    <p class="team__bio">Fernanda auxilia na gestão financeira para garantir um crescimento sólido e
+                        estruturado.</p>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .team {
+                text-align: center;
+                padding: 5rem 2rem;
+
+                border-radius: 20px;
+                color: rgb(26, 24, 24);
+                overflow: hidden;
+            }
+
+            .team__container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 30px;
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 2rem;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 20px;
+            }
+
+            .team__member {
+                background: rgba(255, 255, 255, 0.2);
+                padding: 2rem;
+                border-radius: 15px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+                position: relative;
+            }
+
+            .team__member:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            }
+
+            .team__photo {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 1rem;
+                border: 4px solid white;
+                transition: transform 0.3s;
+            }
+
+            .team__member:hover .team__photo {
+                transform: scale(1.1);
+            }
+
+            .team__name {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+
+            .team__role {
+                font-size: 1.1rem;
+                font-style: italic;
+                margin-bottom: 0.5rem;
+            }
+
+            .team__bio {
+                font-size: 1rem;
+            }
+
+            @media (max-width: 768px) {
+                .team__container {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+
+
+
         <a href="https://wa.me/seunumerodetelefone" class="whatsapp-button" target="_blank"
             aria-label="Fale conosco no WhatsApp">
-           <img src="https://img.freepik.com/vetores-premium/whatsapp-em-ingles_798572-489.jpg?semt=ais_hybrid" alt="">
+            <img src="https://img.freepik.com/vetores-premium/whatsapp-em-ingles_798572-489.jpg?semt=ais_hybrid" alt="">
         </a>
 
         <style>
@@ -475,12 +870,18 @@
             <div class="footer__container container grid">
                 <div class="footer__content grid">
                     <div class="footer__data">
-                        <h3 class="footer__title">Empresa</h3>
-                        <p class="footer__description">Escolha o destino, nós proporcionamos a experiência.</p>
                         <div>
-                            <a href="https://www.instagram.com/" target="_blank" class="footer__social">
-                                <i class="ri-instagram-fill"></i>
-                            </a>
+                            <div class="footer__data">
+                                <h3 class="footer__subtitle">Nossas Unidades Planejar</h3>
+                                <ul>
+                                    <li class="footer__item">
+                                        <strong>Matriz:</strong> União da Vitória, PR
+                                    </li>
+                                    <li class="footer__item">
+                                        <strong>Filial:</strong> Mallet, PR
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -488,14 +889,14 @@
                         <h3 class="footer__subtitle">Sobre</h3>
                         <ul>
                             <li class="footer__item"><a href="#about" class="footer__link">Sobre Nós</a></li>
-
                         </ul>
                     </div>
 
                     <div class="footer__data">
                         <h3 class="footer__subtitle">E-mail</h3>
                         <ul>
-                            <li class="footer__item"><a href="#" class="footer__link">planejar@agropecuraio.com.br</a>
+                            <li class="footer__item">
+                                <p class="footer__link">planejar402@gmail.com</p>
                             </li>
                         </ul>
                     </div>
@@ -503,9 +904,14 @@
                     <div class="footer__data">
                         <h3 class="footer__subtitle">Telefone</h3>
                         <ul>
-                            <li class="footer__item"><a href="#" class="footer__link">(42) 9888-13269</a></li>
+                            <li class="footer__item">
+                                <p class="footer__link">(42) 9888-13269</p>
+                            </li>
                         </ul>
                     </div>
+
+                    <!-- Seção de Localizações -->
+
                 </div>
 
                 <div class="footer__rights">
@@ -513,6 +919,7 @@
                 </div>
             </div>
         </footer>
+
 
         <!--========== SCROLL UP ==========-->
         <a href="#" class="scrollup" id="scroll-up">

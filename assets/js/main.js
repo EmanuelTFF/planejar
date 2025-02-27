@@ -33,27 +33,15 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 function scrollHeader(){
-    const header = document.getElementById('header')
-    const navLinks = document.querySelectorAll('.nav__link'); // Seleciona todos os links
-
-    // Quando o scroll é maior que 100px, adiciona a classe 'scroll-header' no cabeçalho
-    if(this.scrollY >= 100) {
-        header.classList.add('scroll-header'); 
-        
-        // Garante que os links continuem brancos quando o fundo mudar
-        navLinks.forEach(link => {
-            link.style.color = 'hsl(120, 60%, 20%)';  // Força a cor branca
-        });
-    } else {
-        header.classList.remove('scroll-header'); 
-        
-        // Restabelece a cor original dos links (ou qualquer cor que você tenha definido)
-        navLinks.forEach(link => {
-            link.style.color = '';  // Retira a alteração de cor, fazendo-os seguir o estilo padrão
-        });
-    }
+    const header = document.getElementById('header');
+    header.style.backgroundColor = 'hsla(120, 28.40%, 62.70%, 0.47)'; // Verde fixo
+    header.style.transition = 'background 0.4s ease-in-out';
 }
-window.addEventListener('scroll', scrollHeader)
+
+// Garante que o fundo verde já está aplicado ao carregar a página
+document.addEventListener("DOMContentLoaded", scrollHeader);
+
+
 
 
 /*==================== SWIPER DISCOVER ====================*/
