@@ -54,7 +54,7 @@
     <header class="header" id="header">
         <nav class="nav container">
             <div class="nav__logo left">
-                <img src="assets/img/logo1.png" alt="logo">
+                <img src="assets/img/logo.png" alt="logo">
             </div>
 
             <div class="nav__menu" id="nav-menu">
@@ -66,20 +66,21 @@
                         <a href="#experience" class="nav__link">Porque a Planejar?</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#advantages" class="nav__link">Vantagens</a>
+                        <a href="#advantages" class="nav__link">Nossos Serviços</a>
                     </li>
                     <li class="nav__item">
                         <a href="#testimonials" class="nav__link">Depoimentos</a>
                     </li>
                     <li class="nav__item">
+                        <a href="#valores" class="nav__link">Missão e Valores</a>
+                    </li>
+                    <li class="nav__item">
                         <a href="#team" class="nav__link">Equipe</a>
                     </li>
+
+
                 </ul>
                 <i class="ri-close-line nav__close" id="nav-close"></i>
-            </div>
-
-            <div class="nav__logo right">
-                <img src="assets/img/logo.png" alt="logo">
             </div>
 
             <div class="nav__toggle" id="nav-toggle">
@@ -95,20 +96,17 @@
             align-items: center;
             width: 100%;
             padding: 0 20px;
-            /* Adiciona espaço lateral */
         }
 
         .nav__menu {
             flex: 1;
             display: flex;
             justify-content: center;
-            /* Centraliza os links */
         }
 
         .nav__list {
             display: flex;
             gap: 30px;
-            /* Mantém espaçamento entre os links */
             list-style: none;
         }
 
@@ -120,115 +118,53 @@
 
         .nav__logo img {
             width: 180px;
-            /* Reduzi o tamanho para harmonizar */
         }
 
         .nav__logo.left {
             position: absolute;
             left: 50px;
-            /* Diminui um pouco a proximidade da borda */
             padding-left: 60px;
-            /* Adiciona um pequeno afastamento interno */
         }
 
-        .nav__logo.right {
+        /* Ícones responsivos */
+        .nav__toggle {
+            font-size: 1.8rem;
+            cursor: pointer;
             position: absolute;
-            right: 50px;
-            /* Diminui um pouco a proximidade da borda */
-            padding-right: 60px;
-            /* Adiciona um pequeno afastamento interno */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
         }
 
+        .nav__close {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 2rem;
+            color: var(--title-color);
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        /* Responsividade */
         @media screen and (max-width: 767px) {
             .nav__logo img {
                 width: 100px;
-                /* Reduz bastante o tamanho das imagens */
             }
 
             .nav__logo.left {
                 left: 20px;
                 padding-left: 0;
             }
-
-            .nav__logo.right {
-                right: 20px;
-                padding-right: 0;
-            }
-
-            .nav__toggle {
-                font-size: 2rem;
-                /* Pode aumentar um pouco o tamanho do ícone */
-            }
-
-            .nav__toggle {
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                font-size: 1.8rem;
-                cursor: pointer;
-                z-index: 100;
-            }
-
-            .nav__close {
-                position: absolute;
-                top: 1rem;
-                left: 1rem;
-                font-size: 2rem;
-                color: var(--title-color);
-                cursor: pointer;
-                z-index: 10000;
-                /* Maior que o menu */
-            }
-
         }
 
         @media screen and (max-width: 1220px) {
             .nav__link {
                 font-size: 0.9rem;
-
-            }
-
-            .nav__logo.left {
-                position: absolute;
-                left: 50px;
-                /* Diminui um pouco a proximidade da borda */
-                padding-left: 60px;
-                /* Adiciona um pequeno afastamento interno */
-            }
-
-            .nav__logo.right {
-                position: absolute;
-                right: 50px;
-                /* Diminui um pouco a proximidade da borda */
-                padding-right: 60px;
-                /* Adiciona um pequeno afastamento interno */
-            }
-        }
-
-        @media screen and (max-width: 1220px) {
-            .nav__link {
-                font-size: 0.9rem;
-            }
-
-            .nav__logo.left {
-                position: absolute;
-                left: 50px;
-                /* Diminui um pouco a proximidade da borda */
-                padding-left: 60px;
-                /* Adiciona um pequeno afastamento interno */
-            }
-
-            .nav__logo.right {
-                position: absolute;
-                right: 50px;
-                /* Diminui um pouco a proximidade da borda */
-                padding-right: 60px;
-                /* Adiciona um pequeno afastamento interno */
             }
 
             .nav__logo img {
                 width: 160px;
-                /* Reduzi o tamanho para harmonizar */
             }
         }
 
@@ -237,25 +173,8 @@
                 font-size: 0.85rem;
             }
 
-            .nav__logo.left {
-                position: absolute;
-                left: 50px;
-                /* Diminui um pouco a proximidade da borda */
-                padding-left: 60px;
-                /* Adiciona um pequeno afastamento interno */
-            }
-
-            .nav__logo.right {
-                position: absolute;
-                right: 50px;
-                /* Diminui um pouco a proximidade da borda */
-                padding-right: 60px;
-                /* Adiciona um pequeno afastamento interno */
-            }
-
             .nav__logo img {
                 width: 140px;
-                /* Reduzi o tamanho para harmonizar */
             }
         }
 
@@ -264,84 +183,24 @@
                 font-size: 0.8rem;
             }
 
-            .nav__logo.left {
-                position: absolute;
-                left: 30px;
-                /* Diminui um pouco a proximidade da borda */
-                padding-left: 60px;
-                /* Adiciona um pequeno afastamento interno */
-            }
-
-            .nav__logo.right {
-                position: absolute;
-                right: 30px;
-                /* Diminui um pouco a proximidade da borda */
-                padding-right: 60px;
-                /* Adiciona um pequeno afastamento interno */
-            }
-
             .nav__logo img {
                 width: 120px;
-                /* Reduzi o tamanho para harmonizar */
             }
         }
 
         @media screen and (max-width: 950px) {
             .nav__link {
-                font-size: 0.75rem;
+                font-size: 0.95rem;
+            }
+
+            .nav__logo img {
+                width: 100px;
             }
 
             .nav__logo.left {
-                position: absolute;
                 left: 5px;
-                /* Diminui um pouco a proximidade da borda */
-                padding-left: 60px;
-                /* Adiciona um pequeno afastamento interno */
-            }
-
-            .nav__logo.right {
-                position: absolute;
-                right: 5px;
-                /* Diminui um pouco a proximidade da borda */
-                padding-right: 60px;
-                /* Adiciona um pequeno afastamento interno */
-            }
-
-            .nav__logo img {
-                width: 100px;
-                /* Reduzi o tamanho para harmonizar */
             }
         }
-
-        @media screen and (max-width: 874px) {
-            .nav__link {
-                font-size: 0.75rem;
-            }
-
-            .nav__logo.left {
-                position: absolute;
-                left: 0;
-                /* Diminui um pouco a proximidade da borda */
-                padding-left: 60px;
-                /* Adiciona um pequeno afastamento interno */
-            }
-
-            .nav__logo.right {
-                position: absolute;
-                right: 0;
-                /* Diminui um pouco a proximidade da borda */
-                padding-right: 60px;
-                /* Adiciona um pequeno afastamento interno */
-            }
-
-            .nav__logo img {
-                width: 100px;
-                /* Reduzi o tamanho para harmonizar */
-            }
-        }
-
-        /* Ícones na lateral */
-        /* Ícones na lateral, mais próximos do centro */
     </style>
 
 
@@ -366,7 +225,8 @@
                     <a href="https://www.instagram.com/planejar_planejamentoagrop/" target="_blank" class="social-icon">
                         <i class="ri-instagram-fill"></i>
                     </a>
-                    <a href="https://www.facebook.com/profile.php?id=100064026793225&locale=pt_BR" target="_blank" class="social-icon">
+                    <a href="https://www.facebook.com/profile.php?id=100064026793225&locale=pt_BR" target="_blank"
+                        class="social-icon">
                         <i class="ri-facebook-fill"></i>
                     </a>
                 </div>
@@ -447,13 +307,13 @@
                 <div class="about__data">
                     <h2 class="section__title about__title">Mais Informações <br> Sobre Planejamento Agropecuário</h2>
                     <p class="about__description">
-                        O planejamento agropecuário é essencial para otimizar a produção rural, garantindo
-                        sustentabilidade,
-                        eficiência e rentabilidade. Com estratégias adequadas, é possível maximizar os recursos
-                        disponíveis,
-                        reduzir custos e melhorar a produtividade no campo.
+                        O planejamento agropecuário é uma ferramenta estratégica fundamental para o sucesso da atividade
+                        rural.
+                        Ele consiste em organizar, de forma antecipada e estruturada, todas as ações envolvidas na
+                        produção
+                        agropecuária, considerando fatores econômicos e técnicos.
                     </p>
-                    <a href="#experience" class="button">Saiba Mais</a>
+                    <button class="button" onclick="openModal()">Clique para saber mais</button>
                 </div>
                 <div class="about__img">
                     <div class="about__img-overlay">
@@ -463,6 +323,188 @@
                 </div>
             </div>
         </section>
+
+        <!-- Modal -->
+        <!-- Modal -->
+        <div id="infoModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Mais detalhes sobre o planejamento</h3>
+                    <span class="close" onclick="closeModal()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Esse processo permite ao produtor rural tomar decisões mais assertivas, aproveitando melhor os
+                        recursos disponíveis — como terra, mão de obra, insumos e capital — e reduzindo desperdícios e
+                        custos desnecessários.
+                    </p>
+                    <p>
+                        Além disso, o planejamento contribui diretamente para o aumento da produtividade e da
+                        rentabilidade da propriedade, ao mesmo tempo em que promove a sustentabilidade do negócio no
+                        longo prazo.
+                    </p>
+                    <p>Com um bom planejamento agropecuário, é possível:</p>
+                    <ul class="checklist">
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M5 13l4 4L19 7" />
+                            </svg> Definir metas claras e realistas para a produção</li>
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M5 13l4 4L19 7" />
+                            </svg> Avaliar a viabilidade de investimentos e novas tecnologias</li>
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M5 13l4 4L19 7" />
+                            </svg> Prever riscos e criar estratégias de mitigação</li>
+                        <li><svg viewBox="0 0 24 24">
+                                <path d="M5 13l4 4L19 7" />
+                            </svg> Adaptar-se melhor às variações de mercado e clima</li>
+                    </ul>
+                    <p>
+                        Em resumo, <img src="assets/img/letra1.png" alt="Planejar" class="inline-logo"> é
+                        essencial para transformar a atividade rural em um negócio mais eficiente, competitivo e
+                        sustentável.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <style>
+            .inline-logo {
+                height: 2em;
+                vertical-align: text-bottom;
+                margin: 0 4px;
+                object-fit: contain;
+            }
+
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 9999;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                animation: fadeIn 0.3s ease;
+                overflow-y: auto; /* permite rolar o fundo caso necessário */
+            }
+
+            .modal-content {
+                background: #fff;
+                margin: 5% auto;
+                padding: 2rem;
+                border-radius: 16px;
+                width: 90%;
+                max-width: 750px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+                animation: slideUp 0.4s ease;
+                font-family: 'Segoe UI', sans-serif;
+            }
+
+            .modal-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #e0e0e0;
+                padding-bottom: 0.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .modal-header h3 {
+                font-size: 1.4rem;
+                color: #2e7d32;
+                margin: 0;
+            }
+
+            .close {
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: #888;
+                transition: 0.3s;
+            }
+
+            .close:hover {
+                color: #000;
+            }
+
+            .modal-body p {
+                margin-bottom: 1rem;
+                color: #333;
+                line-height: 1.6;
+            }
+
+            .checklist {
+                list-style: none;
+                padding: 0;
+                margin-bottom: 1rem;
+            }
+
+            .checklist li {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                margin-bottom: 0.6rem;
+                color: #333;
+            }
+
+            .checklist svg {
+                width: 20px;
+                height: 20px;
+                fill: #2e7d32;
+                stroke: #2e7d32;
+                stroke-width: 2;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+
+            @keyframes slideUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .modal-content {
+                    padding: 1.5rem;
+                }
+            }
+        </style>
+
+        <script>
+            function openModal() {
+                document.getElementById('infoModal').style.display = 'block';
+            }
+
+            function closeModal() {
+                document.getElementById('infoModal').style.display = 'none';
+            }
+
+            // Fecha ao clicar fora
+            window.onclick = function (event) {
+                const modal = document.getElementById('infoModal');
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
         <style>
             .about__description {
                 text-align: justify;
@@ -473,91 +515,39 @@
 
 
         <!--==================== POR QUE A VIA BRASIL ====================-->
-
         <section class="experience section" id="experience">
             <h2 class="section__title">Por que a Planejar?</h2>
 
             <div class="experience__container container">
+                <!-- Bloco único com texto + vídeo -->
                 <div class="experience__row">
                     <div class="experience__text">
-                        <h2 class="experience__number">Gestão eficiente da propriedade rural</h2>
+                        <h2 class="experience__number">Aqui na Planejar, você conta com:</h2>
                         <span class="experience__description">
-                            Soluções completas para otimização da produção agrícola e pecuária.
-                            <br><br>
                             <ul>
-                                <li>Monitoramento de custos e insumos</li>
-                                <li>Controle de produtividade e eficiência</li>
-                                <li>Redução de desperdícios e perdas</li>
-                                <li>Outras funcionalidades</li>
+                                <li>Profissionais qualificados e credenciados, preparados para oferecer todos os
+                                    nossos serviços com excelência e segurança técnica.</li>
+                                <li> Agilidade e praticidade, tornando todo o processo mais simples e eficiente para o
+                                    produtor rural, do início ao fim.</li>
+                                <li> Transparência e imparcialidade nas orientações, garantindo decisões focadas no que
+                                    é melhor para o seu negócio.</li>
+                                <li> Atendimento personalizado, porque entendemos que cada propriedade tem suas
+                                    particularidades e merece soluções sob medida.</li>
+                                <li> E o mais importante: você é a nossa prioridade. Trabalhamos com dedicação para
+                                    aumentar sua rentabilidade e fortalecer o seu negócio rural.</li>
                             </ul>
                         </span>
                     </div>
                     <div class="experience__image">
-                        <img src="https://blog.7mboots.com.br/wp-content/uploads/2025/01/blog-5482.jpg"
-                            alt="Gestão Rural">
-                    </div>
-                </div>
-
-                <div class="experience__row experience__row--reverse">
-                    <div class="experience__text">
-                        <h2 class="experience__number">Análise e auditoria agrícola</h2>
-                        <span class="experience__description">
-                            Auditoria de dados agrícolas para maior transparência e controle.
-                            <br><br>
-                            <ul>
-                                <li>Identificação de falhas no manejo</li>
-                                <li>Controle de despesas e receitas</li>
-                                <li>Comparação de safras e desempenho</li>
-                                <li>Outros benefícios</li>
-                            </ul>
-                        </span>
-                    </div>
-                    <div class="experience__image">
-                        <img src="https://blbauditoreseconsultores.com.br/blog/wp-content/uploads/2022/03/auditoria-para-distribuicao-insumos-agricolas.png"
-                            alt="Auditoria Agrícola">
-                    </div>
-                </div>
-
-                <div class="experience__row">
-                    <div class="experience__text">
-                        <h2 class="experience__number">Gerenciamento de insumos e recursos</h2>
-                        <span class="experience__description">
-                            Controle detalhado de insumos utilizados na produção agropecuária.
-                            <br><br>
-                            <ul>
-                                <li>Acompanhamento de estoque</li>
-                                <li>Registro de aplicações e consumo</li>
-                                <li>Gestão de fornecedores</li>
-                            </ul>
-                        </span>
-                    </div>
-                    <div class="experience__image">
-                        <img src="https://boosteragro.com/blog-po/wp-content/uploads/2021/08/soja.jpg"
-                            alt="Controle de Insumos">
-                    </div>
-                </div>
-
-                <div class="experience__row experience__row--reverse">
-                    <div class="experience__text">
-                        <h2 class="experience__number">Relatórios de desempenho agrícola</h2>
-                        <span class="experience__description">
-                            Visualização detalhada dos resultados da produção.
-                            <br><br>
-                            <ul>
-                                <li>Relatórios por cultura</li>
-                                <li>Análises climáticas e impactos</li>
-                                <li>Projeções de colheita</li>
-                                <li>Outros insights</li>
-                            </ul>
-                        </span>
-                    </div>
-                    <div class="experience__image">
-                        <img src="https://i2.wp.com/www.myfarm.com.br/wp-content/uploads/2023/12/980174.jpg"
-                            alt="Relatórios Agrícolas">
+                        <video width="100%" height="auto" controls>
+                            <source src="assets/video/Planejar 4K Desfoque.mp4" type="video/mp4">
+                            Seu navegador não suporta a tag de vídeo.
+                        </video>
                     </div>
                 </div>
             </div>
         </section>
+
 
         <script>
             document.addEventListener("DOMContentLoaded", function () {
@@ -576,27 +566,7 @@
             });
         </script>
 
-        <!--==================== VANTAGENS ====================-->
-        <section class="advantages section" id="advantages">
-            <h2 class="section__title">Vantagens</h2>
-            <div class="advantages__container container">
-                <div class="advantage" data-sr>
-                    <i class="ri-file-list-3-line advantage__icon"></i>
-                    <h3 class="advantage__title">Otimização de Custos</h3>
-                    <p class="advantage__description">Gestão eficiente dos custos operacionais da fazenda.</p>
-                </div>
-                <div class="advantage" data-sr>
-                    <i class="ri-time-line advantage__icon"></i>
-                    <h3 class="advantage__title">Assistência técnica via Whatsapp</h3>
-                    <p class="advantage__description">Acompanhamento contínuo do desempenho da produção.</p>
-                </div>
-                <div class="advantage" data-sr>
-                    <i class="ri-bar-chart-line advantage__icon"></i>
-                    <h3 class="advantage__title">Análises e Projeções</h3>
-                    <p class="advantage__description">Projeção de colheita e produtividade.</p>
-                </div>
-            </div>
-        </section>
+
         <script src="https://unpkg.com/scrollreveal"></script>
         <script>
             ScrollReveal().reveal('[data-sr]', {
@@ -609,6 +579,108 @@
                 reset: false
             });
         </script>
+        <br>
+        <br>
+        <br>
+        <section class="advantages section" id="advantages">
+            <h2 class="section__title">Nossos Serviços</h2>
+            <div class="advantages__container container">
+                <div class="advantage-card" data-sr>
+                    <i class="ri-plant-line advantage__icon"></i>
+                    <h3 class="advantage__title">Assistência Técnica à Lavoura</h3>
+                    <p class="advantage__description">
+                        Acompanhamento no campo com orientações personalizadas para melhorar o manejo, aumentar a
+                        produtividade e reduzir custos.
+                    </p>
+                </div>
+                <div class="advantage-card" data-sr>
+                    <i class="ri-map-pin-line advantage__icon"></i>
+                    <h3 class="advantage__title">Topografia e Georreferenciamento</h3>
+                    <p class="advantage__description">
+                        Medição precisa da propriedade para regularização fundiária, divisão de áreas e transferência de
+                        imóveis.
+                    </p>
+                </div>
+                <div class="advantage-card" data-sr>
+                    <i class="ri-bank-card-line advantage__icon"></i>
+                    <h3 class="advantage__title">Crédito Rural</h3>
+                    <p class="advantage__description">
+                        Projetos completos e sob medida para facilitar o acesso ao financiamento agrícola.
+                    </p>
+                </div>
+                <div class="advantage-card" data-sr>
+                    <i class="ri-home-heart-line advantage__icon"></i>
+                    <h3 class="advantage__title">Avaliação de Imóveis</h3>
+                    <p class="advantage__description">
+                        Avaliação técnica do valor da propriedade rural para compra, venda, inventário ou financiamento.
+                    </p>
+                </div>
+                <div class="advantage-card" data-sr>
+                    <i class="ri-file-paper-line advantage__icon"></i>
+                    <h3 class="advantage__title">Cadastro Ambiental Rural (CAR)</h3>
+                    <p class="advantage__description">
+                        Elaboração e atualização do CAR, garantindo conformidade ambiental da sua propriedade.
+                    </p>
+                </div>
+                <div class="advantage-card" data-sr>
+                    <i class="ri-leaf-line advantage__icon"></i>
+                    <h3 class="advantage__title">Licenciamento Ambiental</h3>
+                    <p class="advantage__description">
+                        Emissão e regularização de licenças ambientais para suas atividades agropecuárias.
+                    </p>
+                </div>
+                <div class="advantage-card" data-sr>
+                    <i class="ri-shield-check-line advantage__icon"></i>
+                    <h3 class="advantage__title">Consórcios e Seguros Agrícolas</h3>
+                    <p class="advantage__description">
+                        Proteja seu patrimônio com consórcios e seguros contra riscos climáticos e financeiros.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <style>
+            .advantages__container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+
+            .advantage-card {
+                background: #f9fefb;
+                padding: 2rem;
+                border-radius: 20px;
+                text-align: center;
+                box-shadow: 0 8px 20px rgba(0, 128, 0, 0.08);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                border: 1px solid #e0f2e9;
+            }
+
+            .advantage-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 12px 24px rgba(0, 128, 0, 0.15);
+            }
+
+            .advantage__icon {
+                font-size: 2.5rem;
+                color: #2e7d32;
+                margin-bottom: 1rem;
+            }
+
+            .advantage__title {
+                font-size: 1.25rem;
+                color: #1b5e20;
+                margin-bottom: 0.5rem;
+            }
+
+            .advantage__description {
+                color: #4e4e4e;
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+        </style>
+
+
 
 
         <section class="testimonials section" id="testimonials">
@@ -696,38 +768,245 @@
             }
         </style>
 
-        <section class="team section" id="team">
-            <h2 class="section__title">Nossa Equipe</h2>
-            <div class="team__container container">
-                <div class="team__member">
-                    <img src="team1.jpg" alt="Foto de Ana Souza" class="team__photo">
-                    <h3 class="team__name">João Silva</h3>
-                    <p class="team__role">CEO & Fundadora</p>
-                    <p class="team__bio">Com mais de 15 anos de experiência, Ana lidera nossa equipe com visão e
-                        inovação.</p>
+        <section class="values section" id="valores">
+            <h2 class="section__title">Nossa Missão & Valores</h2>
+            <div class="values__container container">
+
+                <div class="mission__block" data-sr>
+                    <h3 class="mission__title">Nossa Missão</h3>
+                    <p class="mission__text">
+                        Potencializar a rentabilidade dos produtores rurais por meio de soluções estratégicas, técnicas
+                        personalizadas e visão de negócio do plantio à colheita.
+                    </p>
                 </div>
-                <div class="team__member">
-                    <img src="team2.jpg" alt="Foto de Carlos Lima" class="team__photo">
-                    <h3 class="team__name">João Silva</h3>
-                    <p class="team__role">Engenheiro Agrônomo</p>
-                    <p class="team__bio">Especialista em soluções sustentáveis, Carlos ajuda clientes a maximizar sua
-                        produção.</p>
-                </div>
-                <div class="team__member">
-                    <img src="team3.jpg" alt="Foto de Fernanda Costa" class="team__photo">
-                    <h3 class="team__name">João Silva</h3>
-                    <p class="team__role">Consultora Financeira</p>
-                    <p class="team__bio">Fernanda auxilia na gestão financeira para garantir um crescimento sólido e
-                        estruturado.</p>
+
+                <div class="values__grid">
+                    <div class="value__card" data-sr>
+                        <div class="icon-circle"><i class="fas fa-balance-scale"></i></div>
+                        <h4>Ética e Transparência</h4>
+                        <p>Imparcialidade, responsabilidade e ética em cada etapa do serviço prestado.</p>
+                    </div>
+
+                    <div class="value__card" data-sr>
+                        <div class="icon-circle"><i class="fas fa-handshake"></i></div>
+                        <h4>Compromisso com o Cliente</h4>
+                        <p>Entendimento real das necessidades no campo, com soluções sob medida.</p>
+                    </div>
+
+                    <div class="value__card" data-sr>
+                        <div class="icon-circle"><i class="fas fa-lightbulb"></i></div>
+                        <h4>Inovação Inteligente</h4>
+                        <p>Uso de tecnologias e práticas que realmente agregam valor à produção rural.</p>
+                    </div>
+
+                    <div class="value__card" data-sr>
+                        <div class="icon-circle"><i class="fas fa-chart-line"></i></div>
+                        <h4>Resultados Efetivos</h4>
+                        <p>Foco total em eficiência e entrega de valor com planejamento estratégico.</p>
+                    </div>
+
+                    <div class="value__card" data-sr>
+                        <div class="icon-circle"><i class="fas fa-seedling"></i></div>
+                        <h4>Gestão Sustentável</h4>
+                        <p>Visão de longo prazo com o uso responsável e eficiente dos recursos agropecuários.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
+
+
         <style>
+            .section__title {
+                text-align: center;
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+                color: #2e7d32;
+                font-weight: 700;
+            }
+
+            .values__container {
+                max-width: 1200px;
+                margin: auto;
+                padding: 2rem;
+            }
+
+            .mission__block {
+                background-color: #f1f8e9;
+                border-left: 6px solid #66bb6a;
+                padding: 2rem;
+                border-radius: 12px;
+                margin-bottom: 3rem;
+                animation: fadeInUp 1s ease-in-out;
+            }
+
+            .mission__title {
+                font-size: 1.8rem;
+                color: #388e3c;
+                margin-bottom: 1rem;
+                font-weight: 600;
+            }
+
+            .mission__text {
+                font-size: 1.2rem;
+                color: #555;
+                line-height: 1.6;
+            }
+
+            .values__grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 2rem;
+                justify-items: center;
+            }
+
+            .value__card {
+                background-color: #ffffff;
+                border-radius: 15px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                padding: 2rem;
+                text-align: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                animation: fadeInUp 1.2s ease-in-out;
+                max-width: 350px;
+                width: 100%;
+            }
+
+            .value__card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+            }
+
+            .icon-circle {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: #66bb6a;
+                margin-bottom: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 1.8rem;
+            }
+
+            .value__card h4 {
+                font-size: 1.5rem;
+                color: #2e7d32;
+                margin-bottom: 1rem;
+                font-weight: 600;
+            }
+
+            .value__card p {
+                font-size: 1rem;
+                color: #666;
+                line-height: 1.5;
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(40px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        </style>
+
+
+
+        <section class="team section" id="team">
+            <h2 class="section__title">Nossa Equipe</h2>
+            <br><br>
+            <div class="team__group">
+                <h3 class="team__subtitle">Equipe Técnica</h3>
+                <div class="team__container container">
+                    <div class="team__member">
+                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/11186876-simbolo-de-foto-de-perfil-masculino-vetor.jpg"
+                            alt="Foto de João Silva" class="team__photo">
+                        <h3 class="team__name">João Silva</h3>
+                        <p class="team__role">Engenheiro Agrônomo</p>
+                        <p class="team__bio">Especialista em soluções sustentáveis, João ajuda clientes a maximizar sua
+                            produção.</p>
+                    </div>
+                    <div class="team__member">
+                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/11186876-simbolo-de-foto-de-perfil-masculino-vetor.jpg"
+                            alt="Foto de Maria Oliveira" class="team__photo">
+                        <h3 class="team__name">Maria Oliveira</h3>
+                        <p class="team__role">Zootecnista</p>
+                        <p class="team__bio">Maria traz inovação no manejo de animais e otimização de recursos
+                            zootécnicos.</p>
+                    </div>
+                    <div class="team__member">
+                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/11186876-simbolo-de-foto-de-perfil-masculino-vetor.jpg"
+                            alt="Foto de Paulo Lima" class="team__photo">
+                        <h3 class="team__name">Paulo Lima</h3>
+                        <p class="team__role">Técnico Agrícola</p>
+                        <p class="team__bio">Atua diretamente no campo garantindo a eficiência nas operações do dia a
+                            dia.</p>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div class="team__group">
+                <h3 class="team__subtitle">Equipe Administrativa</h3>
+                <div class="team__container container">
+                    <div class="team__member">
+                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/11186876-simbolo-de-foto-de-perfil-masculino-vetor.jpg"
+                            alt="Foto de Fernanda Costa" class="team__photo">
+                        <h3 class="team__name">Fernanda Costa</h3>
+                        <p class="team__role">Consultora Financeira</p>
+                        <p class="team__bio">Fernanda auxilia na gestão financeira para garantir um crescimento sólido e
+                            estruturado.</p>
+                    </div>
+                    <div class="team__member">
+                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/11186876-simbolo-de-foto-de-perfil-masculino-vetor.jpg"
+                            alt="Foto de Lucas Mendes" class="team__photo">
+                        <h3 class="team__name">Lucas Mendes</h3>
+                        <p class="team__role">Analista Administrativo</p>
+                        <p class="team__bio">Organiza processos internos para melhorar a eficiência operacional.</p>
+                    </div>
+                    <div class="team__member">
+                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/11186876-simbolo-de-foto-de-perfil-masculino-vetor.jpg"
+                            alt="Foto de Carla Nunes" class="team__photo">
+                        <h3 class="team__name">Carla Nunes</h3>
+                        <p class="team__role">Secretária Executiva</p>
+                        <p class="team__bio">Responsável pela comunicação e apoio direto à diretoria da empresa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <style>
+            .team__subtitle {
+                font-size: 2rem;
+                font-weight: 600;
+                color: #2e7d32;
+                margin: 2rem 0 1rem;
+                text-align: center;
+                animation: fadeInUp 0.8s ease;
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
             .team {
                 text-align: center;
                 padding: 5rem 2rem;
-
+                background-color: rgba(173, 191, 172, 0.459);
                 border-radius: 20px;
                 color: rgb(26, 24, 24);
                 overflow: hidden;
@@ -819,11 +1098,13 @@
                 transition: transform 0.3s ease-in-out;
                 animation: pulse 1.5s infinite;
                 text-decoration: none;
+                border-radius: 50%;
             }
 
             .whatsapp-icon {
                 width: 35px;
                 height: 35px;
+                border-radius: 50%;
             }
 
             .whatsapp-button:hover {
@@ -850,11 +1131,13 @@
                     height: 50px;
                     bottom: 15px;
                     right: 15px;
+                    border-radius: 50%;
                 }
 
                 .whatsapp-icon {
                     width: 30px;
                     height: 30px;
+                    border-radius: 50%;
                 }
             }
         </style>
@@ -870,25 +1153,14 @@
             <div class="footer__container container grid">
                 <div class="footer__content grid">
                     <div class="footer__data">
-                        <div>
-                            <div class="footer__data">
-                                <h3 class="footer__subtitle">Nossas Unidades Planejar</h3>
-                                <ul>
-                                    <li class="footer__item">
-                                        <strong>Matriz:</strong> União da Vitória, PR
-                                    </li>
-                                    <li class="footer__item">
-                                        <strong>Filial:</strong> Mallet, PR
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="footer__data">
-                        <h3 class="footer__subtitle">Sobre</h3>
+                        <h3 class="footer__subtitle">Nossas Unidades Planejar</h3>
                         <ul>
-                            <li class="footer__item"><a href="#about" class="footer__link">Sobre Nós</a></li>
+                            <li class="footer__item">
+                                <strong>Matriz:</strong> União da Vitória, PR
+                            </li>
+                            <li class="footer__item">
+                                <strong>Filial:</strong> Mallet, PR
+                            </li>
                         </ul>
                     </div>
 
@@ -902,16 +1174,19 @@
                     </div>
 
                     <div class="footer__data">
-                        <h3 class="footer__subtitle">Telefone</h3>
+                        <h3 class="footer__subtitle">Contatos</h3>
                         <ul>
                             <li class="footer__item">
-                                <p class="footer__link">(42) 9888-13269</p>
+                                <strong>União da Vitória (Fixo):</strong> (42) 3524-2420
+                            </li>
+                            <li class="footer__item">
+                                <strong>União da Vitória (WhatsApp):</strong> (42) 9888-13269
+                            </li>
+                            <li class="footer__item">
+                                <strong>Mallet (WhatsApp):</strong> (42) 98829-3331
                             </li>
                         </ul>
                     </div>
-
-                    <!-- Seção de Localizações -->
-
                 </div>
 
                 <div class="footer__rights">
