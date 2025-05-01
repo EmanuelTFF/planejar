@@ -389,7 +389,8 @@
                 height: 100%;
                 background: rgba(0, 0, 0, 0.6);
                 animation: fadeIn 0.3s ease;
-                overflow-y: auto; /* permite rolar o fundo caso necessário */
+                overflow-y: auto;
+                /* permite rolar o fundo caso necessário */
             }
 
             .modal-content {
@@ -539,14 +540,14 @@
                         </span>
                     </div>
                     <div class="experience__image">
-                        <iframe width="100%" height="315" 
-                        src="https://www.youtube.com/embed/fXIVKpXNfSI" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
-                    
+                        <iframe width="100%" height="315"
+                            src="https://www.youtube.com/embed/fXIVKpXNfSI?rel=0&modestbranding=1&showinfo=0&autohide=1"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+
+
                     </div>
                 </div>
             </div>
@@ -802,7 +803,6 @@
                         <h4>Inovação Inteligente</h4>
                         <p>Uso de tecnologias e práticas que realmente agregam valor à produção rural.</p>
                     </div>
-
                     <div class="value__card" data-sr>
                         <div class="icon-circle"><i class="fas fa-chart-line"></i></div>
                         <h4>Resultados Efetivos</h4>
@@ -859,10 +859,32 @@
 
             .values__grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                grid-template-columns: repeat(3, 1fr);
                 gap: 2rem;
                 justify-items: center;
+                align-items: start;
             }
+
+            /* Centraliza o 4º e 5º itens */
+            .values__grid .value__card:nth-child(4),
+            .values__grid .value__card:nth-child(5) {
+                grid-column: span 1;
+                justify-self: center;
+            }
+
+            @media (max-width: 900px) {
+                .values__grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 600px) {
+                .values__grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+
 
             .value__card {
                 background-color: #ffffff;
@@ -926,59 +948,46 @@
             <h2 class="section__title">Nossa Equipe</h2>
             <br><br>
             <div class="team__group">
-                <h3 class="team__subtitle">Equipe Técnica</h3>
+
                 <div class="team__container container">
                     <div class="team__member">
-                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/11186876-simbolo-de-foto-de-perfil-masculino-vetor.jpg"
-                            alt="Foto de João Silva" class="team__photo">
-                        <h3 class="team__name">João Silva</h3>
-                        <p class="team__role">Engenheiro Agrônomo</p>
-                        <p class="team__bio">Especialista em soluções sustentáveis, João ajuda clientes a maximizar sua
-                            produção.</p>
+                        <img src="assets/img/1.png" alt="Foto de João Silva" class="team__photo">
+                        <h3 class="team__name">Greyce Mucke Tenczina</h3>
+                        <p class="team__role">Setor Administrativo</p>
                     </div>
                     <div class="team__member">
-                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/11186876-simbolo-de-foto-de-perfil-masculino-vetor.jpg"
-                            alt="Foto de Maria Oliveira" class="team__photo">
-                        <h3 class="team__name">Maria Oliveira</h3>
-                        <p class="team__role">Zootecnista</p>
-                        <p class="team__bio">Maria traz inovação no manejo de animais e otimização de recursos
-                            zootécnicos.</p>
+                        <img src="assets/img/2.png" alt="Foto de Maria Oliveira" class="team__photo">
+                        <h3 class="team__name">Aline Machado Domingues Pires da Luz</h3>
+                        <p class="team__role">Atendimento ao publico</p>
+                        <p class="team__bio">Filial Mallet</p>
                     </div>
                     <div class="team__member">
-                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/11186876-simbolo-de-foto-de-perfil-masculino-vetor.jpg"
-                            alt="Foto de Paulo Lima" class="team__photo">
-                        <h3 class="team__name">Paulo Lima</h3>
-                        <p class="team__role">Técnico Agrícola</p>
-                        <p class="team__bio">Atua diretamente no campo garantindo a eficiência nas operações do dia a
-                            dia.</p>
+                        <img src="assets/img/3.png" alt="Foto de Paulo Lima" class="team__photo">
+                        <h3 class="team__name">Lauro Dreviani Junior </h3>
+                        <p class="team__role"> Atendimento ao publico matriz</p>
                     </div>
                 </div>
             </div>
             <br><br>
             <div class="team__group">
-                <h3 class="team__subtitle">Equipe Administrativa</h3>
+
                 <div class="team__container container">
                     <div class="team__member">
-                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/11186876-simbolo-de-foto-de-perfil-masculino-vetor.jpg"
-                            alt="Foto de Fernanda Costa" class="team__photo">
-                        <h3 class="team__name">Fernanda Costa</h3>
-                        <p class="team__role">Consultora Financeira</p>
-                        <p class="team__bio">Fernanda auxilia na gestão financeira para garantir um crescimento sólido e
-                            estruturado.</p>
+                        <img src="assets/img/4.png" alt="Foto de Fernanda Costa" class="team__photo">
+                        <h3 class="team__name">Fernando Suider</h3>
+                        <p class="team__role">Engenheiro Agrônomo</p>
+                        <p class="team__bio">Setor de Georreferenciamento e Topografia</p>
                     </div>
                     <div class="team__member">
-                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/11186876-simbolo-de-foto-de-perfil-masculino-vetor.jpg"
-                            alt="Foto de Lucas Mendes" class="team__photo">
-                        <h3 class="team__name">Lucas Mendes</h3>
-                        <p class="team__role">Analista Administrativo</p>
-                        <p class="team__bio">Organiza processos internos para melhorar a eficiência operacional.</p>
+                        <img src="assets/img/5.png" alt="Foto de Lucas Mendes" class="team__photo">
+                        <h3 class="team__name">Sergio Kit</h3>
+                        <p class="team__role"> Consultor de campo</p>
                     </div>
                     <div class="team__member">
-                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/11186876-simbolo-de-foto-de-perfil-masculino-vetor.jpg"
-                            alt="Foto de Carla Nunes" class="team__photo">
-                        <h3 class="team__name">Carla Nunes</h3>
-                        <p class="team__role">Secretária Executiva</p>
-                        <p class="team__bio">Responsável pela comunicação e apoio direto à diretoria da empresa.</p>
+                        <img src="assets/img/6.png" alt="Foto de Carla Nunes" class="team__photo">
+                        <h3 class="team__name">Paulo Cesar Tenczina</h3>
+                        <p class="team__role">Sócio proprietário</p>
+                        <p class="team__bio">Engenheiro agrônomo e responsável técnico</p>
                     </div>
                 </div>
             </div>
@@ -1044,10 +1053,10 @@
             }
 
             .team__photo {
-                width: 120px;
-                height: 120px;
+                width: 175px;
+                height: 200px;
                 border-radius: 50%;
-                object-fit: cover;
+                object-fit: top;
                 margin-bottom: 1rem;
                 border: 4px solid white;
                 transition: transform 0.3s;
@@ -1181,13 +1190,14 @@
                         <h3 class="footer__subtitle">Contatos</h3>
                         <ul>
                             <li class="footer__item">
-                                <strong>União da Vitória (Fixo):</strong> (42) 3524-2420
+                                <strong>União da Vitória (Fixo):</strong><br> (42) 3524-2420
                             </li>
                             <li class="footer__item">
-                                <strong>União da Vitória (WhatsApp):</strong> (42) 9888-13269
+                                <strong>União da Vitória (WhatsApp):</strong> <br>
+                                (42) 9888-13269
                             </li>
                             <li class="footer__item">
-                                <strong>Mallet (WhatsApp):</strong> (42) 98829-3331
+                                <strong>Mallet (WhatsApp):</strong><br> (42) 98829-3331
                             </li>
                         </ul>
                     </div>
